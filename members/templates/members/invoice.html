@@ -1,0 +1,315 @@
+{% extends "members/layouts/base-fullscreen.html" %}
+
+{% block title %} Lock {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<main class="content">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+        <div class="btn-toolbar dropdown">
+            <button class="btn btn-primary btn-sm mr-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="fas fa-plus mr-2"></span>More
+            </button>
+            <div class="dropdown-menu dashboard-dropdown dropdown-menu-left mt-2">
+                <a class="dropdown-item font-weight-bold" href="#"></span>● Complain</a>
+                <a class="dropdown-item font-weight-bold" href="#"></span>● Enquiry</a>
+                
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-primary">●PPS</button>
+            <button type="button" class="btn btn-sm btn-outline-primary">Atm Card</button>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+            <div class="card border-light shadow-sm">
+                <div class="card-body">
+                    <div class="row d-block d-xl-flex align-items-center">
+                        <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                            <div class="icon icon-shape icon-md icon-shape-blue rounded mr-4 mr-sm-0"><span class="fas fa-chart-line"></span></div>
+                            <div class="d-sm-none">
+                                <h6 class="h6">Partner payment(pps)</h6>
+                                <p class="text-gray mb-4 small">Recommended</p>
+                                <p class="mb-1">●More secured than card</p>
+                                <p class="mb-1">●Cheaper, and Faster</p>
+                                <p class="mb-1">●Zero risk</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-7 px-xl-0">
+                            <div class="d-none d-sm-block">
+                                <h6 class="h6">Partner payment(pps)</h6>
+                                <p class="mb-1">●More secured than card</p>
+                                <p class="mb-1">●Cheaper & faster</p>
+                            </div>
+                            <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> WorldWide accepted</small> 
+                            <div class="small mt-2">                               
+                                <span class="fas fa-angle-up text-success"></span>                                   
+                                <span class="text-success font-weight-bold">76.8%</span> within 3 months
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+            <div class="card border-light shadow-sm">
+                <div class="card-body">
+                    <div class="row d-block d-xl-flex align-items-center">
+                        <div class="col-12 col-xl-7 px-xl-0">
+                            <div class="d-none d-sm-block">
+                                <h6 class="h5">Instructions</h6>
+                                <p>Use bank transfer to make your payment
+                                  and your payment will be confirm within few minutes 
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+       
+        <div class="row">
+            <div class="col-12 col-xl-8 mb-4">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="card border-light shadow-sm">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                                        <h6 class="h6 mb-4">Send USD 6.8(₦ 3,502) to any of the authorized PPS for verification</h6>
+                                       
+                                        <!-- The text field -->
+                                        
+                                       
+                                    </div>
+                                    <div class="">
+                                    <p class="">Choose a verified (PPS) below to process your payment, <a href="#" class="btn btn-sm btn-secondary">What is PPS?</a></p>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mb-4">
+                                        <div class="card border-light shadow-sm">
+                                            <div class="card-header border-bottom border-light d-flex justify-content-between">
+                                                <h6 class="h6 mb-0">Select PPS partner below</h6>
+                                                <a href="#" class="btn btn-sm btn-secondary">See all</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-group list-group-flush list my--3">
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                        <div class="col-auto">
+                                                            <!-- Avatar -->
+                                                            <a href="#" class="user-avatar">
+                                                                <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-auto ml--2">
+                                                            <h4 class="h6 mb-0">
+                                                                <a href="#">Raymas</a>
+                                                            </h4>
+                                                            <span class="text-success">●</span>
+                                                            <small>Online</small>
+                                                        </div>
+                                                        <div class="col text-right">
+                                                            <a href="{% url 'ray' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                        </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <!-- Avatar -->
+                                                                <a href="#" class="user-avatar">
+                                                                    <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto ml--2">
+                                                                <h4 class="h6 mb-0">
+                                                                    <a href="#">Natty</a>
+                                                                </h4>
+                                                                <span class="text-success">●</span>
+                                                            <small>Online</small>
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="{% url 'paywithvictor' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <!-- Avatar -->
+                                                                <a href="#" class="user-avatar">
+                                                                    <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto ml--2">
+                                                                <h4 class="h6 mb-0">
+                                                                    <a href="#">Auta</a>
+                                                                </h4>
+                                                                <span class="text-success">●</span>
+                                                            <small>Online</small>
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="{% url 'busy' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <!-- Avatar -->
+                                                                <a href="#" class="user-avatar">
+                                                                    <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto ml--2">
+                                                            <h4 class="h6 mb-0">
+                                                                    <a href="#">Muhsin</a>
+                                                            </h4>
+                                                            <span class="text-success">●</span>
+                                                            <small>Online</small>
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="{% url 'msn' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mb-4">
+                                        <div class="card border-light shadow-sm">
+                                            <div class="card-header border-bottom border-light d-flex justify-content-between">
+                                                <h6 class="h6 mb-0">Select PPS partner below</h6>
+                                                <a href="#" class="btn btn-sm btn-secondary">See all</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-group list-group-flush list my--3">
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                        <div class="col-auto">
+                                                            <!-- Avatar -->
+                                                            <a href="#" class="user-avatar">
+                                                                <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-auto ml--2">
+                                                            <h4 class="h6 mb-0">
+                                                                <a href="#">Bilo</a>
+                                                            </h4>
+                                                            <span class="text-success">●</span>
+                                                            <small>Online</small>
+                                                        </div>
+                                                        <div class="col text-right">
+                                                            <a href="{% url 'busy' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                        </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <!-- Avatar -->
+                                                                <a href="#" class="user-avatar">
+                                                                    <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto ml--2">
+                                                                <h4 class="h6 mb-0">
+                                                                    <a href="#">QR</a>
+                                                                </h4>
+                                                                <span class="text-success">●</span>
+                                                            <small>Online</small>
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="{% url 'qrb' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <!-- Avatar -->
+                                                                <a href="#" class="user-avatar">
+                                                                    <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto ml--2">
+                                                                <h4 class="h6 mb-0">
+                                                                    <a href="#">Nordic</a>
+                                                                </h4>
+                                                                <span class="text-danger">●</span>
+                                                                <small>Offline</small>
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="{% url 'busy' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item px-0">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <!-- Avatar -->
+                                                                <a href="#" class="user-avatar">
+                                                                    <img class="rounded-circle" alt="Image placeholder" src="/static/assets/img/team/pps.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto ml--2">
+                                                            <h4 class="h6 mb-0">
+                                                                    <a href="#">Natro</a>
+                                                            </h4>
+                                                            <span class="text-danger">●</span>
+                                                                <small>Offline</small>
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="{% url 'busy' %}" class="btn btn-sm btn-tertiary"><i class="fas fa-calendar-check mr-1"></i>Pay</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </main>
+    
+    {% endblock content %}
+    
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}
+    <script>
+        function CopyToClipboard(containerid) {
+          if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select().createTextRange();
+            document.execCommand("copy");
+          } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            alert("Account has been copied")
+          }
+        }
+        
+        </script>
+    {% endblock javascripts %}
+    

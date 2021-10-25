@@ -1,0 +1,117 @@
+{% extends "members/layouts/basea.html" %}
+{% load static %}
+
+{% block title %} Settings {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main class="content"> 
+
+        {% include 'members/includes/navigation.html' %}
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+            <div>
+                <button class="btn btn-secondary text-dark mr-2 dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="fas fa-plus mr-2"></span>New
+                </button>
+                <div class="dropdown-menu dashboard-dropdown dropdown-menu-left mt-2">
+                    <a class="dropdown-item font-weight-bold" href="#"><span class="far fa-file-alt mr-2"></span>Task</a>
+                    
+                    <div role="separator" class="dropdown-divider"></div>
+                    
+                </div>
+            </div>
+            
+        </div>
+            <div class="row">
+
+                <div class="col-12 col-xl-4">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="card border-light text-center p-0">
+                                
+                                <div class="card-body pb-5">
+                                    <h4 class="h3">{{ profile.user.username }}</h4>
+                                    <h4 class="font-weight-normal">Agent</h4>
+                                    <h5 class="font-weight-normal">
+                                        {{ request.user.email }}
+                                    </h5>
+                                    <h3>Verification in progress....</h3></p>
+                                    
+                                    <a class="btn btn-sm btn-secondary" href="#">Uncertified</a>
+                                    <p>Certification will be issue to all agents at the end of the verification process.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-8">
+                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                
+                        <h2 class="h5 mb-4">Dashboard:</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="fas fa-pager"></span>
+                                </div>
+                                <h3 class="font-weight-bolder">$0.00</h3>
+                                <p class="text-gray">Balance</p>
+                            </div>
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="far fa-file-alt"></span>
+                                </div>
+                                <h3 class="font-weight-bolder">{{ balance }}</h3>
+                                <p class="text-gray">Units</p>
+                            </div>
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="fas fa-puzzle-piece"></span>
+                                </div>
+                                <h3 class="font-weight-bolder">0</h3>
+                                <p class="text-gray">Circle</p>
+                            </div>
+                            
+                            
+    </main>
+<main class="content">
+        <div class="row">
+            <div class="col-12 col-xl-8">
+                <div class="card card-body bg-white border-light shadow-sm mb-4">
+                    <h2 class="h5 mb-4">User information</h2>
+                    <div class="card bg-white shadow-soft text-primary rounded mb-4">
+                        <div class="px-3 px-lg-4 py-5 text-center">  
+                            <h5 class="font-weight-bold text-primary">Sample application</h5>
+                            <img src="/static/assets/img/show/passport.png" alt="Selfie Photo">
+                            <div class="d-md-block text-left">
+                                <h2 class="h5 mb-4">Startup</h2>
+                                <p>This is a sample application for a user. </p>
+                            </div>
+                            
+                        </div>
+                        <h4 class="h3">
+                            <a class="btn btn-sm btn-primary mr-2" href="#"><span class="fas fa-user-plus mr-1"></span> Donate</a>
+                            <a class="btn btn-sm btn-secondary" href="#">Sponsor</a>
+                        </h4>
+                    </div>
+                </div>
+                
+            </div>
+            
+                
+        
+
+        
+
+    
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

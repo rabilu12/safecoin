@@ -1,0 +1,98 @@
+{% extends "members/layouts/base.html" %}
+{% load static %}
+
+{% block title %} Settings {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main class="content">
+            <div class="row">
+                
+
+                <div class="col-12 col-xl-8">
+                    <div class="card border-light text-center p-0">
+                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                        <h2 class="h5 mb-4">Units top Up</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="fas">60</span>
+                                    <div class="text-gray small">units</div>
+                                </div>
+                                <br>
+                                <a class="btn btn-sm btn-secondary" href="{% url 'topup60' %}">Get unit</a>
+                            </div>
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="fas">130</span><div class="text-gray small">units</div>
+                                </div>
+                                <br>
+                                <a class="btn btn-sm btn-secondary" href="{% url 'topup130' %}">Get unit</a>
+                            </div>
+                            <div class="col-6 col-md-3 text-center">
+                                <a href="#">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="fas">270</span><div class="text-gray small">units</div>
+                                </div>
+                            </a>
+                            <br>
+                                <a class="btn btn-sm btn-secondary" href="{% url 'topup270' %}">Get unit</a>
+                                
+                            </div>
+                            <div class="col-6 col-md-3 text-center">
+                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                    <span class="fas">550</span><div class="text-gray small">units</div>
+                                </div>
+                                <br>
+                                <a class="btn btn-sm btn-secondary" href="{% url 'topup550' %}">Get unit</a>
+                            </div>
+                            <li role="separator" class="dropdown-divider mt-4 mb-3 border-black"></li>
+                            
+                            <div class="card border-light text-center p-0">
+                                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                                        <h2 class="h5 mb-4">You are subscribing for 130 units</h2>
+                                        <div class="row justify-content-center">
+                                            <div class="col-6 col-md-3 text-center mb-4">
+                                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                                    <span class="fas">130</span>
+                                                    <div class="text-gray small">units</div>
+                                                </div>
+                                               
+                                            </div>
+                                            <h4 class="h3">
+                                                <a class="btn btn-sm btn-primary mr-2" href="{% url 'usdttopup130' %}"><button class="btn btn-info" type="button">Pay with USDT</button></a>
+                                                <a class="btn btn-sm btn-primary mr-2" href="{% url 'bnbtopup130' %}"><button class="btn btn-info" type="button">Pay with BNB</button></a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            </div>
+                            </div> 
+                            <div class="col-12 col-xl-4">
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <div class="card border-light text-center p-0">
+                                            <span class="btn btn-sm btn-primary mr-2" href="#"><span class="fas"></span>Units top Up </span>
+                                            <div class="card-body pb-5">
+                                                <p class="text-gray mb-4">Settling certification fee using ATM card is cost and time consuming.</p>
+                                                <p>With units, fee can now easily be processed and settled withing seconds  </p>
+                                                <a class="btn btn-sm btn-primary mr-2" href="#"><span
+                                                        class="fas fa-user-plus mr-1"></span>Contact us </a>
+                                                <a class="btn btn-sm btn-secondary" href="#">Learn more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                    
+    </main>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

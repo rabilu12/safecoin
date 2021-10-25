@@ -1,0 +1,52 @@
+{% extends 'user/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<head>
+  <meta charset='utf-8'>
+  <title>Login & Register | Success</title>
+</head>
+<main>
+  <!-- Section -->
+  <section class="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
+      <div class="container">
+          <p class="text-center"><a href="{% url 'user:sign_up' %}" class="text-gray-700"><i class="fas fa-angle-left mr-2"></i> Back to SignUp </a></p>
+          
+              <div class="col-12 d-flex align-items-center justify-content-center">
+                  <div class="mb-4 mb-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                      <div class="text-center text-md-center mb-4 mt-md-0">
+                          <h1 class="mb-0 h3"><h1>Success! Welcome, {{ user.username }}!</h1></h1>
+                      
+                          <div class="form-group mb-4">
+                            <div>
+                              <label for="username">You have successfully {{ achievement }}!</label>
+                              <div class="message1">
+                                <h3>{% for message in messages %}
+                                  <div class="message1">
+                                  <strong class="message1">{{message}}</strong>
+                                  </div>
+                                  {% endfor %}</h3>
+                              </div>  
+                          </div><br><br>
+                          <!-- End of Form -->
+                         <a href="{% url 'user:log_in' %}">
+                          <button type="submit" class="send_btn1">login</button>
+                        </a>
+                      </form>
+                      
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+</main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

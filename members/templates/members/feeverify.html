@@ -1,0 +1,52 @@
+{% extends "members/layouts/basea.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} Settings {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<main>
+
+    <!-- Section -->
+    <section class="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
+        <div class="container">
+            <p class="text-center"><a href="/dashboard.html" class="text-gray-700"><i class="fas fa-angle-left mr-2"></i> Back to homepage</a></p>
+            <div class="row justify-content-center form-bg-image" data-background-lg="/static/assets/img/illustrations/signin.svg">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="mb-4 mb-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        <div class="text-center text-md-center mb-4 mt-md-0">
+                            <h1 class="mb-0 h3">Verify a payment</h1>
+                        </div>
+                        
+                        <form action="#" method="POST">
+                            {%csrf_token%}
+                            <!-- Form -->
+                            <div class="form-group mb-4">
+                                <label for="username">Payer username</label>
+                                <div class="input-group">
+                                    {% render_field form.username class="form-control" type=text placeholder="Enter username to verify" %}
+                                </div>  
+                            </div>
+                            <!-- End of Form -->
+                           
+                            <button type="submit" class="btn btn-block btn-primary">Verify</button>
+                        </form>
+
+                        <p class="message">{{ form.errors.email }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,60 @@
+{% extends 'user/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<!--- model registration form extracted as html --->
+<div class="res">
+<div class="form-bg"></div>
+<div class="form_head">
+     <h2 class="form_title">Register with Charityland</h2>
+</div>
+<div class="main_form">
+     <form class="" action="" method="POST">
+     {%csrf_token%}
+<div id="name">
+     <h2 class="name">Names:</h2>
+     <label class="first_label">First name</label>
+     <div class="first_name">
+{% render_field form.first_name class="first_name" type=text placeholder="Enter your first name" %}
+
+     </div>
+</div>
+     <label class="second_label"> Last name</label>
+     <div class="last_name">
+{% render_field form.last_name class="last_name" type=text placeholder="Enter your last name" %}
+
+     </div>
+<div class="email">
+     <h2 class="email_head">Email:</h2>
+{% render_field form.email class="email" type=email placeholder="Enter your email" %}
+  
+</div>
+<div class="password">
+     <h2 class="password_head">Phone:</h2>
+
+     {% render_field form.username class="username" type=username placeholder="Choose your username" %}
+  
+</div>
+<div class="password">
+     <h2 class="password_conhead">Password:</h2>  
+{% render_field form.password class="password_con" placeholder="Create your password"%}
+  
+</div>
+</div>
+<div class="password_con">
+     <h2 class="password_conhead">Confirm Password:</h2>  
+{% render_field form.passwordconfirmation class="password_con" placeholder="Confirm password"%}
+  
+</div>
+{% for message in messages %}
+<div class="message">
+<strong class="message">{{message}}</strong>
+</div>
+{% endfor %}
+     <button class="send_btn">Register</button>
+     </form>
+</div>
+<h1>The fastest way to get something done is to do it in a team</h1>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'user/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<!--- model registration form extracted as html --->
+<div class="res">
+<div class="form-bg"></div>
+<div class="form_head">
+     <h2 class="form_title">Login to Charityland</h2>
+</div>
+<form action="/verify" method="POST">
+     {% csrf_token %}
+       <h2>Login</h2>
+       <label for="log_email">Email:</label>
+       <input type="text" id="email" name="email">
+       <label for="log_password">Password:</label>
+       <input type="password" id="password" name="password">
+       {% for message in messages %}
+<div class="message">
+<strong class="message">{{message}}</strong>
+</div>
+{% endfor %}
+       <button type="submit" name="button" value="login" class="send_btn">Login</button>
+     </form>
+     {% endblock %}

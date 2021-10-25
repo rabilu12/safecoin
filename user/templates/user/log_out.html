@@ -1,0 +1,40 @@
+{% extends 'user/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load i18n %}
+
+{% load i18n %}
+
+{% block content %}
+
+
+<main>
+        <!-- Section -->
+        <section class="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
+            <div class="container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="mb-4 mb-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                    <div class="text-center text-md-center mb-4 mt-md-0">
+                        <h3 class="mb-0 h3"><h3>{% trans 'Logged out' %}</h3></h3>
+                        <div class="message1">
+                        <p>
+                            You have successfully logged out.
+                        </p>
+                            </div>
+                                <ul>
+                            <li>
+            <a href="{% url 'user:log_in' %}">{% trans 'Log in' %}</a>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+    
+
+{% endblock %}
+
+  

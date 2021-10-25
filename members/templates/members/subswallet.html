@@ -1,0 +1,61 @@
+{% extends "members/layouts/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} Settings {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <main class="content">
+            <div class="row">
+                
+                <div class="col-12 col-xl-8">
+                    <div class="card border-light text-center p-0">
+                                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                                        <h2 class="h5 mb-4">Fill the required information and submit to receive your units</h2>
+                                        
+                                            <form action="" method="POST">
+                                                    {%csrf_token%}
+                                                <label for="">Wallet address</label>
+                                                {% render_field form.walletid class="form-control" type=text placeholder="Enter the wallet address you paid from" %}
+                                                
+                                                <small id="emailHelp" class="form-text text-muted"> confirm the information you enter, we will not be responsible for any incorrect entry.</small><br>
+                                            
+                                            <button class="btn btn-info" required>Submit</button><br>
+                                        </form>
+                                            <small id="emailHelp" class="form-text text-muted">submit this form only when you successfully send your payment.</small>
+                                   
+                                    </div>
+                                    </div>
+                                </div>
+                                    <div class="col-12 col-xl-4">
+                                        <div class="row">
+                                            <div class="col-12 mb-4">
+                                                <div class="card border-light text-center p-0">
+                                                    <span class="btn btn-sm btn-primary mr-2" href="#"><span class="fas"></span>Units top Up </span>
+                                                    <div class="card-body pb-5">
+                                                        <p class="text-gray mb-4">Settling certification fee using ATM card is cost and time consuming.</p>
+                                                        <p>With units, fee can now easily be processed and settled withing seconds  </p>
+                                                        <a class="btn btn-sm btn-primary mr-2" href="#"><span
+                                                                class="fas fa-user-plus mr-1"></span>Contact us </a>
+                                                        <a class="btn btn-sm btn-secondary" href="#">Learn more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+    </main>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+
+{% endblock javascripts %}
+
+
+
+

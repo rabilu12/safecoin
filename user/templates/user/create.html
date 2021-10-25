@@ -1,0 +1,11 @@
+
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+    <h2>Create an account</h2>
+<form action="/user" method="POST">
+    {%csrf_token%}
+    {{form}}
+    <button class="send_btn">Register</button>
+</form>
+{% endblock %}

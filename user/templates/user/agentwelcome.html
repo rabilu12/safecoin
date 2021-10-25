@@ -1,0 +1,54 @@
+{% extends 'user/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<head>
+  <meta charset='utf-8'>
+  <title>Login & Register | Success</title>
+</head>
+<main>
+  <!-- Section -->
+  <section class="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
+      <div class="container">
+          <p class="text-center"><a href="{% url 'agent_register' %}" class="text-gray-700"><i class="fas fa-angle-left mr-2"></i> Back to SignUp </a></p>
+             <div class="col-12 d-flex align-items-center justify-content-center">
+                  <div class="mb-4 mb-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                      <div class="text-center text-md-center mb-4 mt-md-0">
+                          <h1 class="mb-0 h3"><h1>Success! Welcome, {{ user.username }}!</h1></h1>
+                          <div class="form-group mb-4">
+                              <label for="username">You have applied for an agent!</label>
+                              <div class="p">
+                              <p>Note:</p>
+                              <p>●Certified agents have access to our offices in various countries where availabe.</p>
+                              <p>●they can join our international community to learn more about their roles and payments</p>
+                              <p>●Both voluntary and paid agents need to perform a personal verififcation, 
+                                however verifications are perform by authorised third party partner, 
+                                hence all agents have to pay for their verification fees themselves.</p>
+                            </div>
+                              <div class="message1">
+                                <h3>{% for message in messages %}
+                                  <div class="message1">
+                                  <strong class="message1">{{message}}</strong>
+                                  </div>
+                                  {% endfor %}</h3>
+                              </div>  
+                          <!-- End of Form -->
+                      </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <a href="{% url 'invoice' %}">
+            <button type="submit" class="send_btn">Proceed to verification & certification</button>
+          </a>
+      </div>
+  </section>
+</main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

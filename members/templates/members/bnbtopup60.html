@@ -1,0 +1,95 @@
+{% extends "members/layouts/base.html" %}
+{% load static %}
+
+{% block title %} Settings {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main class="content">
+            <div class="row">
+                
+                <div class="col-12 col-xl-8">
+                    <div class="card border-light text-center p-0">
+                                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                                        <h2 class="h5 mb-4">You are subscribing for 60units, you chose to pay with BNB</h2>
+                                        <div class="row justify-content-center">
+                                            <div class="col-6 col-md-3 text-center mb-4">
+                                                <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle icon-secondary mb-4">
+                                                    <span class="fas">60</span>
+                                                    <div class="text-gray small">units</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <div class="card card-body bg-white border-light shadow-sm mb-4">
+                                                <h2 class="h5 mb-4">Send only 0.148 BNB (BSC-BEP20) to this address</h2>
+                                                <!-- The text field -->
+                                                <div id="div1">0x3b3439bea407b0b61bd6b70cbd7e49998e887f53<a class="btn btn-sm btn-primary mr-2" href="#"   id="button1" onclick="CopyToClipboard('div1')"><span
+                                                    class="fas"></span>Copy</a></div>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-6 col-md-3 text-center mb-4">
+                                    <div class="col-12 col-xl-4">
+                                    <div class="btn btn-info">              
+                                        <button class="form-control is-valid" required></button>
+                                    </div>
+                                    
+                                        <div class="">
+                                            Sent
+                                        </div>                 
+                                    </div>
+                                    
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <a href="{% url 'vppsubs' %}">           
+                                        <button class="btn btn-info" required>Proceed...</button></div>
+                                    </a>           </div>
+                                    </div>
+                                    <div class="col-12 col-xl-4">
+                                        <div class="row">
+                                            <div class="col-12 mb-4">
+                                                <div class="card border-light text-center p-0">
+                                                    <span class="btn btn-sm btn-primary mr-2" href="#"><span class="fas"></span>Units top Up </span>
+                                                    <div class="card-body pb-5">
+                                                        <p class="text-gray mb-4">Settling certification fee using ATM card is cost and time consuming.</p>
+                                                        <p>With units, fee can now easily be processed and settled withing seconds  </p>
+                                                        <a class="btn btn-sm btn-primary mr-2" href="#"><span
+                                                                class="fas fa-user-plus mr-1"></span>Contact us </a>
+                                                        <a class="btn btn-sm btn-secondary" href="#">Learn more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+    </main>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+function CopyToClipboard(containerid) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select().createTextRange();
+    document.execCommand("copy");
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    alert("Address has been copied")
+  }
+}
+
+</script>
+{% endblock javascripts %}
+
+
+
+

@@ -1,0 +1,12 @@
+{% extends 'user/base.html' %}
+{% block content %}
+<!--- model registration form extracted as html --->
+<div class="form-group">
+     <form action="" method="POST">
+     {%csrf_token%}
+     {{form}}
+     {{forms.errors}}
+     <input type="submit">
+     </form>
+</div>
+{% endblock %}

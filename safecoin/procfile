@@ -1,0 +1,1 @@
+web gunicorn safecoin.wsgi:application --log-file-

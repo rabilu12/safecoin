@@ -1,0 +1,81 @@
+{% extends "members/layouts/base-fullscreen.html" %}
+{% load widget_tweaks %}
+{% block title %} Upgrade {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<main class="content">
+<form action="" method="POST">
+    {%csrf_token%}
+<div class="row">
+    <div class="col-12 col-xl-8">
+        <div class="text-center text-md-center mb-4 mt-md-0">
+            <h1 class="mb-0 h3">Agent application</h1>
+        </div>
+        <div class="card card-body bg-white border-light shadow-sm mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div>
+                        <label for="country">Country:</label>
+                         {% render_field form.country class="form-control" type=text placeholder="Enter your country of Residence" %}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div>
+                        <label for="State">State/province:</label>
+                        {% render_field form.state class="form-control" type=text placeholder="Enter your State/province" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3">
+                    <label for="city">City:</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
+                        {% render_field form.city class="form-control" type=text placeholder="Enter the City you live" %}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="Qualification">Highest Qualification:</label>
+                    {% render_field form.qualification class="form-control" type=text placeholder="Select your highest Qualification" %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        {% render_field form.phone class="form-control" type=Number placeholder="+1-866 623 2272" %}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                        <label for="category">Agent Category:</label>
+                        {% render_field form.category class="form-control" type=text placeholder="Select the category you want" %}
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                        <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</main>
+{% endblock %}
+
+
+
+
+                            
+
+
+
+
+                            

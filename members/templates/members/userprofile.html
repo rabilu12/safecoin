@@ -1,0 +1,69 @@
+{% extends "members/layouts/base.html" %}
+{% load static %}
+
+{% block title %} Settings {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main class="content">
+
+     
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+            <div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-12 col-xl-4">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="card border-light text-center p-0">
+                                <div class="profile-cover rounded-top"
+                                     data-background="/static/assets/img/c_banner.jpg"></div>
+                                <div class="card-body pb-5">
+                                    <img src="{{ profile.get_avatar }}"
+                                         class="user-avatar large-avatar rounded-circle mx-auto mt-n7 mb-4"
+                                         alt="Neil Portrait">
+                                    <h4 class="h3">{{ profile.user.username }}</h4>
+                                    <h4 class="font-weight-normal">{{ profile.user.get_full_name }}</h4>
+                                    <h5 class="font-weight-normal">
+                                        {{ request.user.email }}
+                                    </h5>
+                                    <p class="text-gray mb-4">{{ profile.address|default:'' }}</p>
+                                    <a class="btn btn-sm btn-primary mr-2" href="#"><span
+                                            class="fas fa-user-plus mr-1"></span> Connect</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-8">
+                    <div class="card card-body bg-white border-light shadow-sm mb-4">
+                        <div class="row justify-content-center">
+                        <h2 class="h5 mb-4">Notifications</h2>
+                        <p>All applications and requests for funding or sponsorship through charityland.org must be review and evaluate by one or more of our certified agents around the world.
+                           Certified agent has the ability to reject or recommend your application for final approval base on the validity of the information you provided.
+                           Agents may also request for physical meeting with the beneficiaries before disposal.
+                        </p>
+                        <h3>Who can become an agent?</h3>
+                        <p>Any body who can read and write can become an agent irrespective of his/her country of residence.
+                            agents must be willing to undergo a 3-days online training on how to carryout their roles.
+                        </p>
+                        <h2>How to become an agent?</h2>
+                        <p>Application for an agent is currently opened, and will be closed without further notice, once we received the maximum number of applicants we need.</p>
+                        </div>
+                        <a class="btn btn-sm btn-secondary" href="{% url 'agent_register' %}">Become an agent</a>
+                        
+                        </div>
+                        </div>
+    
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

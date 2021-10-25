@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<title>
+    Charityland.org - {% block title %}{% endblock %} | Charityland.org
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="-Agent mandate">
+<meta name="author" content="Charityland">
+<meta name="description" content="Charityland is a non profit making organisation that focus on building humanity and maintaining safer environment.">
+<meta name="keywords" content="Charityland is a non profit making organisation that focus on building humanity and maintaining safer environment." />
+<link rel="canonical" href="https://Charityland.org">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://Charityland.org">
+<meta property="og:title" content="Why we accept only verified applications">
+<meta property="og:description" content="Charityland is a non profit making organisation that focus on building humanity and maintaining safer environment.">
+<meta property="og:image" content="https://Charityland.org">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://Charityland">
+<meta property="twitter:title" content="#">
+<meta property="twitter:description" content="Charityland is a non profit making organisation that focus on building humanity and maintaining safer environment.">
+<meta property="twitter:image" content="https://">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/charitylogonew.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/charitylogonew.png">
+<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Notyf -->
+<link type="text/css" href="/static/assets/vendor/notyf/notyf.min.css" rel="stylesheet">
+
+<!-- Volt CSS -->
+<link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
+
+    <!-- Specific Page CSS goes HERE  -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
+        <a class="navbar-brand mr-lg-5" href="/">
+            <img class="navbar-brand-light" src="/static/assets/img/charitylogonew.png" alt="charityland" /> <img class="navbar-brand-light" src="/static/assets/img/charitylogonew.png" alt="charityland" />
+        </a>
+        <div class="d-flex align-items-center">
+            <button class="navbar-toggler d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-soft">
+        <div class="row">
+            <div class="col-12">
+
+                {% include 'members/includes/sidebar.html' %}
+            
+                {% block content %}{% endblock content %}
+
+            </div>
+        </div>
+    </div>
+
+    {% include 'members/includes/scripts.html' %}    
+    
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+</body>
+</html>

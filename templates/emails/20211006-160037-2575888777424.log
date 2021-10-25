@@ -1,0 +1,53 @@
+Content-Type: multipart/alternative;
+ boundary="===============2848921071523671976=="
+MIME-Version: 1.0
+Subject: Profile activation
+From: test@example.com
+To: muhsinisah@gmail.com
+Date: Wed, 06 Oct 2021 15:00:37 -0000
+Message-ID: <163353243776.12276.11220992069674649956@Rabil>
+
+--===============2848921071523671976==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+To activate your profile, please follow this link:
+
+http://127.0.0.1:8000/user/activate/C1U34E6Jrcj58GGD13jU/
+
+--===============2848921071523671976==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Profile activation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<p>
+    To activate your profile, please follow this link:
+</p>
+
+<p>
+    <a href="http://127.0.0.1:8000/user/activate/C1U34E6Jrcj58GGD13jU/">http://127.0.0.1:8000/user/activate/C1U34E6Jrcj58GGD13jU/</a>
+</p>
+
+</body>
+
+</html>
+
+--===============2848921071523671976==--
+
+-------------------------------------------------------------------------------
