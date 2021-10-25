@@ -17,9 +17,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 #SECRET_KEY = 'django-insecure-3_4$p#)2o!@#3ia9qu0v2y!i+(3!#a4ekv@h7$yz)tygqz3)j&, =@6*d14$r3@z4t(^u64nl*-ro_0k_jhqv1!tn_8o52^p-x=sa$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 1
+DEBUG = 0
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -80,18 +80,18 @@ DEFAULT_FROM_EMAIL = 'test@example.com'
 
 POSTGRES_DB = os.environ.get("  POSTGRES_DB")
 POSTGRES_PASSWORD = os.environ.get("  POSTGRES_PASSWORD")
-POSTGRES_USER = os.environ.get("  POSTGRES_USER")
+POSTGRES_USER = os.environ.get("  POSTGRES_USERNAME")
 POSTGRES_HOST = os.environ.get("  POSTGRES_HOST")
 POSTGRES_PORT = os.environ.get("  POSTGRES_PORT")
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Charityland',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': POSTGRES_DB,
+        'HOST': POSTGRES_HOST,
+        'USER': POSTGRES_USER,
+        'PASSWORD': POSTGRES_PASSWORD,
+        'PORT': POSTGRES_PORT,
         
 
     }
@@ -176,6 +176,3 @@ STATICFILES_FINDERS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
