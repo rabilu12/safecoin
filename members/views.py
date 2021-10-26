@@ -251,9 +251,6 @@ def give(request):
     
 @(login_required(login_url='user:log_in'))
 def feeverify(request):
-    vid = request.user.id
-    pbalance=vpp_balance.objects.get(vpp_id=vid)
-    balance = int(pbalance.unit)
     form1 = vpp_balanceForm()
     form = PaidForm()
     context = {'form':form, 'balance':balance}
