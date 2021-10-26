@@ -179,16 +179,10 @@ def userprofile(request):
 
 @(login_required(login_url='user:log_in'))
 def agentprofile(request):
-    vid = request.user.id
-    pbalance=vpp_balance.objects.get(vpp_id=vid)
-    balance = int(pbalance.unit)
-    context = {
-        'balance' : balance
-    }
     user = request.user.username
     if  Paid.objects.filter(username=user).exists():
         print(balance)
-        return render(request,'members/agentprofile.html', context)
+        return render(request,'members/agentprofile.html')
     else:
         messages.warning(request, 'Your agent account is not verified, make sure you verify your account before the deadline.')
     return redirect  ('/awelcome')
