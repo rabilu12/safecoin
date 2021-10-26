@@ -256,7 +256,7 @@ def feeverify(request):
     balance = int(pbalance.unit)
     form1 = vpp_balanceForm()
     form = PaidForm()
-    context = {'form':form}
+    context = {'form':form, 'balance':balance}
     if request.method == 'POST':
         form = PaidForm(request.POST)
         if form.is_valid():
