@@ -42,7 +42,7 @@ urlpatterns = [
     path("agent/certification/vic", views.paywithvictor, name="paywithvictor"),
     path("agent/certification/ray", views.ray, name="ray"),
     path("agent/certification/qrb", views.qrb, name="qrb"),
-    path("agent/certification/qrb", views.msn, name="msn"),
+    path("agent/certification/msn", views.msn, name="msn"),
 
     path("agent/certification/busy", views.busy, name="busy"),
     
