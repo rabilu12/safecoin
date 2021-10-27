@@ -10,7 +10,7 @@
                 <h2 class="h6">
                     {{ request.user.username }}
                 </h2>
-                <a href="{% url 'logout' %}" class="btn btn-secondary text-dark btn-xs">
+                <a href="{% url 'user:log_out' %}" class="btn btn-secondary text-dark btn-xs">
                     <span class="mr-2"><span class="fas fa-sign-out-alt"></span></span>Sign Out</a>
                 </div>
             </div>
