@@ -181,7 +181,6 @@ def userprofile(request):
 def agentprofile(request):
     user = request.user.username
     if  Paid.objects.filter(username=user).exists():
-        print(balance)
         return render(request,'members/agentprofile.html')
     else:
         messages.warning(request, 'Your agent account is not verified, make sure you verify your account before the deadline.')
