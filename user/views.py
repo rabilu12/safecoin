@@ -142,7 +142,7 @@ class SignUpView(GuestOnlyView, FormView):
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
 
-            messages.success(request, _('You are successfully signed up!'))
+            messages.success(request, _('You are successfully signed up!' 'Proceed to Login to your account'))
 
         return redirect('/welcome')
 
