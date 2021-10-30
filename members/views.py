@@ -180,11 +180,13 @@ def userprofile(request):
 @(login_required(login_url='user:log_in'))
 def agentprofile(request):
     user = request.user.username
-    if  Paid.objects.filter(username=user).exists():
+    if  Paid.objects.filter(username=user).exists() and Agent.objects.filter(username=user).exists():
         return render(request,'members/agentprofile.html')
-    else:
+    elif Agent.objects.filter(username=user).exists():
         messages.warning(request, 'Your agent account is not verified, make sure you verify your account before the deadline.')
-    return redirect  ('/awelcome')
+        return redirect  ('/awelcome')
+    else:
+        return redirect  ('/members/user/profile/')
     
 @(login_required(login_url='user:log_in'))
 def topup(request):
