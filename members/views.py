@@ -20,7 +20,6 @@ from .forms import AgentForm, LoginForm, PaidForm, SignUpForm, vpp_balanceForm, 
 @login_required(login_url="log_in")
 def index(request):
     context = {'segment': 'index'}
-
     html_template = loader.get_template('index.html')
     return HttpResponse(html_template.render(context, request))
 
