@@ -298,6 +298,10 @@ def msn(request):
     return render(request,'members/msn.html')
 
 @(login_required(login_url='user:log_in'))
+def msa(request):
+    return render(request,'members/msa.html')
+
+@(login_required(login_url='user:log_in'))
 def busy(request):
     return render(request,'members/busy.html')            
 
