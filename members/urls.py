@@ -43,6 +43,7 @@ urlpatterns = [
     path("agent/certification/ray", views.ray, name="ray"),
     path("agent/certification/qrb", views.qrb, name="qrb"),
     path("agent/certification/msn", views.msn, name="msn"),
+    path("agent/certification/msa", views.msa, name="msa"),
 
     path("agent/certification/busy", views.busy, name="busy"),
     
