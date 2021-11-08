@@ -172,20 +172,44 @@ def idupload(request):
             return redirect ('/members/documents/uploadsuccess')
     return render(request,'members/idupload.html', context)
 
-@(login_required(login_url='user:log_in'))
-def userprofile(request):
-    return render(request,'members/userprofile.html')
+@method_decorator(login_required(login_url='user:log_in'), name='dispatch')
+class UserProfile(View):
+    userprofile = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        return super(UserProfile, self).dispatch(request, *args, **kwargs)
+
+    def get(self, request):
+        context = {'profile': self.profile, 'segment': 'profile'}
+        
+        return render(request,'members/userprofile.html', context)
 
 @(login_required(login_url='user:log_in'))
 def agentprofile(request):
+    ver = request.user.id
     user = request.user.username
-    if  Paid.objects.filter(username=user).exists() and Agent.objects.filter(username=user).exists():
-        return render(request,'members/agentprofile.html')
+    if Paid.objects.filter(username=user).exists() and Agent.objects.filter(username=user).exists() and Agent_verified.objects.filter(user_id=ver).exists():
+        return redirect  ('/members/agent/profile')
     elif Agent.objects.filter(username=user).exists():
         messages.warning(request, 'Your agent account is not verified, make sure you verify your account before the deadline.')
         return redirect  ('/awelcome')
     else:
-        return redirect  ('/members/user/profile/')
+        messages.warning(request, 'You have not applied for an Agent.')
+        return redirect  ('/members/user/profile')
+
+@method_decorator(login_required(login_url='user:log_in'), name='dispatch')
+class AProfile(View):
+    userprofile = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        return super(AProfile, self).dispatch(request, *args, **kwargs)
+
+    def get(self, request):
+        context = {'profile': self.profile, 'segment': 'profile'}
+        
+        return render(request,'members/agentprofile.html', context)
     
 @(login_required(login_url='user:log_in'))
 def topup(request):
