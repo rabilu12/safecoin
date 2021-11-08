@@ -357,7 +357,7 @@ def iduploadsuccess(request):
 def agentoruser(request):
     user = request.user.username
     if  Agent.objects.filter(username=user).exists():
-        return redirect('/members/agent/profile')
+        return redirect('/members/agt/profile')
     else: 
         return redirect('/members/user/profile')      
 
