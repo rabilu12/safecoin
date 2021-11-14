@@ -1,0 +1,82 @@
+{% extends 'user/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<main class="content">
+    <form action="" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+<div class="row">
+    <div class="col-12 col-xl-8">
+        <div class="text-center text-md-center mb-4 mt-md-0">
+            <h1 class="mb-0 h3">Orphanage Data Entry</h1>
+        </div>
+        <div class="card card-body bg-white border-light shadow-sm mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div>
+                        <label for="country">Orphanage Name:</label>
+                         {% render_field form.oname class="form-control" type=text placeholder="Enter Orphanage Name" %}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div>
+                        <label for="State">Address:</label>
+                        {% render_field form.oaddress class="form-control" type=text placeholder="Enter Orphanage Full Address" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3">
+                    <label for="city">Director:</label>
+                    <div class="input-group">
+                        
+                        {% render_field form.headfullname class="form-control" type=text placeholder="Enter Orphanage Director Name" %}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="Qualification">Phone:</label>
+                    {% render_field form.headcontact class="form-control" type=text placeholder="Enter Director Contact Number" %}
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3">
+                    <label for="city">Total number of Children</label>
+                    <div class="input-group">
+                        
+                        {% render_field form.numberofchildren class="form-control" type=Number placeholder="Enter the total number of Children" %}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="Qualification">Children Photo:</label><br>
+                    {{form.image1}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="phone">Caretakers photo:</label><br>
+                        {{form.image2}}
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                        <label for="category">Orphanage front photo:</label><br>
+                        {{form.image3}}
+                    </div>
+                    
+                    <div class="form-check mb-4">
+                        
+                        <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</main>
+{% endblock %}
