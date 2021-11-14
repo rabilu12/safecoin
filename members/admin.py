@@ -9,7 +9,7 @@ admin.site.register(Vpp)
 admin.site.register(vpp_balance)
 admin.site.register(vppsub)
 admin.site.register(Agent_verified)
-
+admin.site.register(orphanage)
 
 
 
