@@ -359,6 +359,242 @@ def agentoruser(request):
     if  Agent.objects.filter(username=user).exists():
         return redirect('/members/agt/profile')
     else: 
-        return redirect('/members/user/profile')      
+        return redirect('/members/user/profile')
+
+@(login_required(login_url='user:log_in'))
+def odata(request):
+    form = orphanageForm()
+    context = {'form':form}
+    if request.method == 'POST':
+        form = orphanageForm(request.POST, request.FILES)
+        if form.is_valid():
+            odata = form.save( commit=False)
+            odata.agent = request.user.username
+            
+            odata.save()
+            return HttpResponse('Orphanage Data Uploaded Successfully!')
+    return render(request,'members/orphanage.html', context)
+
+@method_decorator(login_required(login_url='user:log_in'), name='dispatch')
+class Task(View):
+    task = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        return super(Task, self).dispatch(request, *args, **kwargs)
+
+    def get(self, request):
+        context = {'profile': self.profile, 'segment': 'profile'}
+        
+        return render(request,'members/task.html', context)
+
+@method_decorator(login_required(login_url='user:log_in'), name='dispatch')
+class Outvoice(View):
+    outvoice = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        return super(Outvoice, self).dispatch(request, *args, **kwargs)
+
+    def get(self, request):
+        context = {'profile': self.profile, 'segment': 'profile'}
+        
+        return render(request,'members/outvoice.html', context)
+
+
+@(login_required(login_url='user:log_in'))
+def outray(request):
+    user = request.user.username
+    vid = request.user.id
+    sender = Profile.objects.get(user_id=vid)
+    sbalance = int(sender.balance)
+    
+    form = transactionForm()
+    form1 = vpp_balanceForm()
+    form2 = ProfileForm()
+    context = {'form':form, 'sbalance':sbalance}
+    if request.method == 'POST':
+        form = transactionForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            withdraw = form.save(commit=False)
+            remain = int(sbalance) - int(amount)
+
+            
+                 
+            if remain < 0:
+                messages.error(request, 'Insufficient balance.')
+            else:
+                receiver = vpp_balance.objects.get(vpp_id = 1)
+                addbalance = int(receiver.unit) + int(amount)
+                (receiver.unit) = addbalance
+                
+
+
+                withdraw.username = user
+                withdraw.viapps = 'Raymas'
+                withdraw.save()
+                
+            
+                form1 = form1.save(commit=False)
+                receiver.save()
+                print (addbalance)
+                form2 = form2.save(commit=False)
+                (sender.balance) = remain
+                sender.save()
+                messages.success(request, 'Your transfer was successful.')
+    return render(request,'members/outray.html', context)
+
+@(login_required(login_url='user:log_in'))
+def contray(request):
+        return render(request, 'members/contray.html') 
+
+@(login_required(login_url='user:log_in'))
+def outmsa(request):
+    user = request.user.username
+    vid = request.user.id
+    sender = Profile.objects.get(user_id=vid)
+    sbalance = int(sender.balance)
+    
+    form = transactionForm()
+    form1 = vpp_balanceForm()
+    form2 = ProfileForm()
+    context = {'form':form, 'sbalance':sbalance}
+    if request.method == 'POST':
+        form = transactionForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            withdraw = form.save(commit=False)
+            remain = int(sbalance) - int(amount)
+
+            
+                 
+            if remain < 0:
+                messages.error(request, 'Insufficient balance.')
+            else:
+                receiver = vpp_balance.objects.get(vpp_id = 2)
+                addbalance = int(receiver.unit) + int(amount)
+                (receiver.unit) = addbalance
+                
+
+
+                withdraw.username = user
+                withdraw.viapps = 'Raymas'
+                withdraw.save()
+                
+            
+                form1 = form1.save(commit=False)
+                receiver.save()
+                print (addbalance)
+                form2 = form2.save(commit=False)
+                (sender.balance) = remain
+                sender.save()
+                messages.success(request, 'Your transfer was successful.')
+    return render(request,'members/outmsa.html', context)
+
+
+@(login_required(login_url='user:log_in'))
+def contmsa(request):
+        return render(request, 'members/contmsa.html') 
+
+
+@(login_required(login_url='user:log_in'))
+def outvic(request):
+    user = request.user.username
+    vid = request.user.id
+    sender = Profile.objects.get(user_id=vid)
+    sbalance = int(sender.balance)
+    
+    form = transactionForm()
+    form1 = vpp_balanceForm()
+    form2 = ProfileForm()
+    context = {'form':form, 'sbalance':sbalance}
+    if request.method == 'POST':
+        form = transactionForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            withdraw = form.save(commit=False)
+            remain = int(sbalance) - int(amount)
+
+            
+                 
+            if remain < 0:
+                messages.error(request, 'Insufficient balance.')
+            else:
+                receiver = vpp_balance.objects.get(vpp_id = 3)
+                addbalance = int(receiver.unit) + int(amount)
+                (receiver.unit) = addbalance
+                
+
+
+                withdraw.username = user
+                withdraw.viapps = 'Raymas'
+                withdraw.save()
+                
+            
+                form1 = form1.save(commit=False)
+                receiver.save()
+                print (addbalance)
+                form2 = form2.save(commit=False)
+                (sender.balance) = remain
+                sender.save()
+                messages.success(request, 'Your transfer was successful.')
+    return render(request,'members/outvic.html', context)
+
+
+@(login_required(login_url='user:log_in'))
+def contvic(request):
+        return render(request, 'members/contvic.html') 
+
+
+@(login_required(login_url='user:log_in'))
+def outmsn(request):
+    user = request.user.username
+    vid = request.user.id
+    sender = Profile.objects.get(user_id=vid)
+    sbalance = int(sender.balance)
+    
+    form = transactionForm()
+    form1 = vpp_balanceForm()
+    form2 = ProfileForm()
+    context = {'form':form, 'sbalance':sbalance}
+    if request.method == 'POST':
+        form = transactionForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            withdraw = form.save(commit=False)
+            remain = int(sbalance) - int(amount)
+
+            
+                 
+            if remain < 0:
+                messages.error(request, 'Insufficient balance.')
+            else:
+                receiver = vpp_balance.objects.get(vpp_id = 3)
+                addbalance = int(receiver.unit) + int(amount)
+                (receiver.unit) = addbalance
+                
+
+
+                withdraw.username = user
+                withdraw.viapps = 'Raymas'
+                withdraw.save()
+                
+            
+                form1 = form1.save(commit=False)
+                receiver.save()
+                print (addbalance)
+                form2 = form2.save(commit=False)
+                (sender.balance) = remain
+                sender.save()
+                messages.success(request, 'Your transfer was successful.')
+    return render(request,'members/outmsn.html', context)
+
+
+@(login_required(login_url='user:log_in'))
+def contmsn(request):
+        return render(request, 'members/contmsn.html') 
+
+
 
        
