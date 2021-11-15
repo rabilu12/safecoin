@@ -8,13 +8,13 @@ from django.template import loader
 from django import template
 
 from members.forms import ProfileForm, form_validation_error
-from members.models import Agent_verified, Profile, Agent, Paid, Vpp, Vpp_verified, vpp_balance, vppsub, orphanage, Transaction
+from members.models import Agent_verified, Profile, Agent, Paid, Vpp, Vpp_verified, vpp_balance, vppsub
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
-from .forms import AgentForm, LoginForm, PaidForm, SignUpForm, vpp_balanceForm, vppsubForm, iduploadForm, transactionForm, orphanageForm
+from .forms import AgentForm, LoginForm, PaidForm, SignUpForm, vpp_balanceForm, vppsubForm, iduploadForm, orphanageForm, transactionForm
 
 
 @login_required(login_url="log_in")
@@ -420,6 +420,7 @@ def outray(request):
             withdraw = form.save(commit=False)
             remain = int(sbalance) - int(amount)
 
+            
                  
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
@@ -594,6 +595,3 @@ def outmsn(request):
 def contmsn(request):
         return render(request, 'members/contmsn.html') 
 
-
-
-       
