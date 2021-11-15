@@ -589,6 +589,7 @@ def outmsn(request):
                 messages.success(request, 'Your transfer was successful.')
     return render(request,'members/outmsn.html', context)
 
+
 @(login_required(login_url='user:log_in'))
 def contmsn(request):
         return render(request, 'members/contmsn.html') 
