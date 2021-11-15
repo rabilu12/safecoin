@@ -404,10 +404,14 @@ class Outvoice(View):
 
 @(login_required(login_url='user:log_in'))
 def outray(request):
-    
-            
-                 
-            
+    form = transactionForm()
+    form1 = vpp_balanceForm()
+    form2 = ProfileForm()
+    context = {'form':form, 'sbalance':sbalance}
+    if request.method == 'POST':
+        form = transactionForm(request.POST)
+        if form.is_valid(): 
+            form.save()
     return render(request,'members/outray.html', context)
 
 @(login_required(login_url='user:log_in'))
