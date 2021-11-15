@@ -52,21 +52,7 @@ urlpatterns = [
     path("checkupload/", views.checkidupload, name="checkidupload"),
     path("documents/uploadsuccess", views.iduploadsuccess, name="iduploadsuccess"),
     path("agentoruser/", views.agentoruser, name="agentoruser"),
-    
-    path("odata/", views.odata, name="odata"),
-    path('agent/task/', views.Task.as_view(), name='task'),
-    path('agent/outv/', views.Outvoice.as_view(), name='outv'),
-    path("agent/outv/ray", views.outray, name="outray"),
-    path("agent/outv/msa", views.outmsa, name="outmsa"),
-    path("agent/outv/vic", views.outvic, name="outvic"),
-    path("agent/outv/msn", views.outmsn, name="outmsn"),
-    path("agent/wdw/contray", views.contray, name="contray"),
-    path("agent/wdw/contmsa", views.contmsa, name="contmsa"),
-    path("agent/wdw/contvic", views.contvic, name="contvic"),
-    path("agent/wdw/contmsn", views.contmsn, name="contmsn"),
 
 
 
 ]
-
-    
