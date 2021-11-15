@@ -14,7 +14,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
-from .forms import AgentForm, LoginForm, PaidForm, SignUpForm, vpp_balanceForm, vppsubForm, iduploadForm
+from .forms import AgentForm, LoginForm, PaidForm, SignUpForm, vpp_balanceForm, vppsubForm, iduploadForm, transactionForm, orphanageForm
 
 
 @login_required(login_url="log_in")
