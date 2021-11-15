@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from members.models import Agent, Agent_verified, Profile, Paid, Vpp, vpp_balance, vppsub
+from members.models import Agent, Agent_verified, Profile, Paid, Vpp, vpp_balance, vppsub, orphanage
 
 admin.site.register(Profile)
 admin.site.register(Agent)
