@@ -8,7 +8,7 @@ from django.template import loader
 from django import template
 
 from members.forms import ProfileForm, form_validation_error
-from members.models import Agent_verified, Profile, Agent, Paid, Vpp, Vpp_verified, vpp_balance, vppsub
+from members.models import Agent_verified, Profile, Agent, Paid, Vpp, Vpp_verified, vpp_balance, vppsub, orphanage, Transaction
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
