@@ -420,7 +420,6 @@ def outray(request):
             withdraw = form.save(commit=False)
             remain = int(sbalance) - int(amount)
 
-            
                  
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
