@@ -412,7 +412,7 @@ def outray(request):
         form = transactionForm(request.POST)
         if form.is_valid(): 
             form.save()
-    return render(request,'members/outray.html', context)
+    return render(request,'members/busy.html', context)
 
 @(login_required(login_url='user:log_in'))
 def contray(request):
