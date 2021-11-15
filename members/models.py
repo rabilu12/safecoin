@@ -184,7 +184,7 @@ class Circle(models.Model):
 
 class Transaction(models.Model):
     username = models.CharField(max_length=32, null=True, blank=True)
-    amount = models.PositiveIntegerField( max_length=32, null=True, blank=True)
+    amount = models.PositiveIntegerField( null=True, blank=True)
     viapps = models.CharField( max_length=32, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
