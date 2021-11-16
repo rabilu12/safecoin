@@ -404,15 +404,46 @@ class Outvoice(View):
 
 @(login_required(login_url='user:log_in'))
 def outray(request):
+    user = request.user.username
+    vid = request.user.id
+    sender = Profile.objects.get(user_id=vid)
+    sbalance = int(sender.balance)
+    
     form = transactionForm()
     form1 = vpp_balanceForm()
     form2 = ProfileForm()
     context = {'form':form, 'sbalance':sbalance}
     if request.method == 'POST':
         form = transactionForm(request.POST)
-        if form.is_valid(): 
-            form.save()
-    return render(request,'members/busy.html', context)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            withdraw = form.save(commit=False)
+            remain = int(sbalance) - int(amount)
+
+            
+                 
+            if remain < 0:
+                messages.error(request, 'Insufficient balance.')
+            else:
+                receiver = vpp_balance.objects.get(vpp_id = 1)
+                addbalance = int(receiver.unit) + int(amount)
+                (receiver.unit) = addbalance
+                
+
+
+                withdraw.username = user
+                withdraw.viapps = 'Raymas'
+                withdraw.save()
+                
+            
+                form1 = form1.save(commit=False)
+                receiver.save()
+                print (addbalance)
+                form2 = form2.save(commit=False)
+                (sender.balance) = remain
+                sender.save()
+                messages.success(request, 'Your transfer was successful.')
+    return render(request,'members/outray.html', context)
 
 @(login_required(login_url='user:log_in'))
 def contray(request):
@@ -563,4 +594,3 @@ def outmsn(request):
 @(login_required(login_url='user:log_in'))
 def contmsn(request):
         return render(request, 'members/contmsn.html') 
-
