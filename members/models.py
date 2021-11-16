@@ -21,6 +21,8 @@ class Profile(models.Model):
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
     zip = models.CharField(max_length=30, null=True, blank=True)
+    task = models.CharField(max_length=1000, null=True, blank=True)
+    balance = models.IntegerField(null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
