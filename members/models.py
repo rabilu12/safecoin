@@ -159,7 +159,7 @@ class vpp_balance(models.Model):
     
     
 class orphanage(models.Model):
-    agent = models.CharField(max_length=32, null=True, blank=True)
+    agent = models.CharField(max_length=36, null=True, blank=True)
     oname = models.CharField(max_length=300, null=True, blank=True)
     oaddress = models.CharField(max_length=500, null=True, blank=True)
     headfullname = models.CharField(max_length=35, null=True, blank=True)
@@ -173,7 +173,7 @@ class orphanage(models.Model):
 
     class Meta:
         verbose_name = _('Orphanage')
-        verbose_name_plural = _('Orphanages')
+        verbose_name_plural = _('Orphanagess')
 
     @property
     def get_avatar(self):
@@ -181,21 +181,21 @@ class orphanage(models.Model):
 
    
 class Circle(models.Model):
-    rootuser = models.CharField(max_length=30, null=True, blank=True)
-    user = models.CharField(max_length=30, null=True, blank=True)
+    rootuser = models.CharField(max_length=36, null=True, blank=True)
+    user = models.CharField(max_length=36, null=True, blank=True)
 
     date = models.DateTimeField(auto_now_add=True)
         
 
 class Transaction(models.Model):
-    username = models.CharField(max_length=32, null=True, blank=True)
-    amount = models.PositiveIntegerField( max_length=32, null=True, blank=True)
+    username = models.CharField(max_length=36, null=True, blank=True)
+    amount = models.PositiveIntegerField(null=True, blank=True)
     viapps = models.CharField( max_length=32, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = _('transaction')
-        verbose_name_plural = _('transactions')    
+        verbose_name_plural = _('transactionss')    
 
 
 
