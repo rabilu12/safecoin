@@ -399,7 +399,7 @@ class Outvoice(View):
     def get(self, request):
         context = {'profile': self.profile, 'segment': 'profile'}
         
-        return render(request,'members/outray.html', context)
+        return render(request,'members/outvoice.html', context)
 
 
 @(login_required(login_url='user:log_in'))
@@ -438,12 +438,12 @@ def outray(request):
             
                 form1 = form1.save(commit=False)
                 receiver.save()
-                print (addbalance)
+               
                 form2 = form2.save(commit=False)
                 (sender.balance) = remain
                 sender.save()
                 messages.success(request, 'Your transfer was successful.')
-    return render(request,'members/outvoice.html', context)
+    return render(request,'members/outray.html', context)
 
 @(login_required(login_url='user:log_in'))
 def contray(request):
