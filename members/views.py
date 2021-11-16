@@ -418,16 +418,10 @@ def outray(request):
         if form.is_valid():
             amount = form.cleaned_data['amount']
             withdraw = form.save(commit=False)
-            remain = int(sbalance) - int(amount)
-
+            
             
                  
-            if remain < 0:
-                messages.error(request, 'Insufficient balance.')
-            else:
-                receiver = vpp_balance.objects.get(vpp_id = 1)
-                addbalance = int(receiver.unit) + int(amount)
-                (receiver.unit) = addbalance
+            
                 
 
 
@@ -436,12 +430,7 @@ def outray(request):
                 withdraw.save()
                 
             
-                form1 = form1.save(commit=False)
-                receiver.save()
-               
-                form2 = form2.save(commit=False)
-                (sender.balance) = remain
-                sender.save()
+                
                 messages.success(request, 'Your transfer was successful.')
     return render(request,'members/outray.html', context)
 
