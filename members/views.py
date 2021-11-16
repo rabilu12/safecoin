@@ -443,7 +443,7 @@ def outray(request):
                 (sender.balance) = remain
                 sender.save()
                 messages.success(request, 'Your transfer was successful.')
-    return render(request,'members/outray.html', context)
+    return render(request,'members/outvoice.html', context)
 
 @(login_required(login_url='user:log_in'))
 def contray(request):
