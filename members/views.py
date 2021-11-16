@@ -399,7 +399,7 @@ class Outvoice(View):
     def get(self, request):
         context = {'profile': self.profile, 'segment': 'profile'}
         
-        return render(request,'members/outvoice.html', context)
+        return render(request,'members/outray.html', context)
 
 
 @(login_required(login_url='user:log_in'))
