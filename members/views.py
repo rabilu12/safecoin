@@ -478,7 +478,7 @@ def outmsa(request):
 
 
                 withdraw.username = user
-                withdraw.viapps = 'Victory'
+                withdraw.viapps = 'M.Musa'
                 withdraw.save()
                 
             
