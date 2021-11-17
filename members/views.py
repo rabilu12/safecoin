@@ -471,7 +471,7 @@ def outmsa(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(vpp_id = 2)
+                receiver = vpp_balance.objects.get(vpp_id = 5)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
@@ -498,6 +498,7 @@ def contmsa(request):
 
 
 @(login_required(login_url='user:log_in'))
+@(login_required(login_url='user:log_in'))
 def outvic(request):
     user = request.user.username
     vid = request.user.id
@@ -520,20 +521,20 @@ def outvic(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(vpp_id = 3)
+                receiver = vpp_balance.objects.get(vpp_id = 2)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
 
 
                 withdraw.username = user
-                withdraw.viapps = 'Muhsin'
+                withdraw.viapps = 'Victory'
                 withdraw.save()
                 
             
                 form1 = form1.save(commit=False)
                 receiver.save()
-                
+               
                 form2 = form2.save(commit=False)
                 (sender.balance) = remain
                 sender.save()
@@ -576,7 +577,7 @@ def outmsn(request):
 
 
                 withdraw.username = user
-                withdraw.viapps = 'M.Musa'
+                withdraw.viapps = 'Muhsin'
                 withdraw.save()
                 
             
