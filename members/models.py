@@ -156,25 +156,44 @@ class vpp_balance(models.Model):
         return self.vpp_id,self.unit
     
     
-class orphanageForm(forms.ModelForm):
-    class Meta:
-        model = orphanage
-        field = '__All__'
-        exclude = ['date', 'agent'] 
+class orphanage(models.Model):
+    agent = models.CharField(max_length=36, null=True, blank=True)
+    oname = models.CharField(max_length=300, null=True, blank=True)
+    oaddress = models.CharField(max_length=500, null=True, blank=True)
+    headfullname = models.CharField(max_length=35, null=True, blank=True)
+    headcontact = models.CharField(max_length=32, null=True, blank=True)
+    numberofchildren = models.IntegerField(null=True, blank=True)
+    image1 = models.ImageField(upload_to="members/ocenter/pics", null=True, blank=True)
+    image2 = models.ImageField(upload_to="members/ocenter/pics", null=True, blank=True)
+    image3 = models.ImageField(upload_to="members/ocenter/pics", null=True, blank=True)
 
-class circleForm(forms.ModelForm):
-    class Meta:
-        model = Circle
-        field = '__All__'
-        exclude = ['date', 'rootuser']
+    date = models.DateTimeField(auto_now_add=True)
 
-
-class transactionForm(forms.ModelForm):
     class Meta:
-        model = Transaction
-        field = '__All__'
-        exclude = ['date', 'viapps', 'username']    
-    
+        verbose_name = _('Orphanage')
+        verbose_name_plural = _('Orphanagess')
+
+    @property
+    def get_avatar(self):
+        return self.avatar.url if self.avatar else ('assets/img/team/default-profile-picture.png')
+
+   
+class Circle(models.Model):
+    rootuser = models.CharField(max_length=36, null=True, blank=True)
+    user = models.CharField(max_length=36, null=True, blank=True)
+
+    date = models.DateTimeField(auto_now_add=True)
+        
+
+class Transaction(models.Model):
+    username = models.CharField(max_length=36, null=True, blank=True)
+    amount = models.PositiveIntegerField(null=True, blank=True)
+    viapps = models.CharField( max_length=32, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _('transaction')
+        verbose_name_plural = _('transactionss')
     
     
     
