@@ -478,13 +478,13 @@ def outmsa(request):
 
 
                 withdraw.username = user
-                withdraw.viapps = 'Raymas'
+                withdraw.viapps = 'Victory'
                 withdraw.save()
                 
             
                 form1 = form1.save(commit=False)
                 receiver.save()
-                print (addbalance)
+               
                 form2 = form2.save(commit=False)
                 (sender.balance) = remain
                 sender.save()
@@ -527,13 +527,13 @@ def outvic(request):
 
 
                 withdraw.username = user
-                withdraw.viapps = 'Raymas'
+                withdraw.viapps = 'Muhsin'
                 withdraw.save()
                 
             
                 form1 = form1.save(commit=False)
                 receiver.save()
-                print (addbalance)
+                
                 form2 = form2.save(commit=False)
                 (sender.balance) = remain
                 sender.save()
@@ -569,20 +569,20 @@ def outmsn(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(vpp_id = 3)
+                receiver = vpp_balance.objects.get(vpp_id = 4)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
 
 
                 withdraw.username = user
-                withdraw.viapps = 'Raymas'
+                withdraw.viapps = 'M.Musa'
                 withdraw.save()
                 
             
                 form1 = form1.save(commit=False)
                 receiver.save()
-                print (addbalance)
+               
                 form2 = form2.save(commit=False)
                 (sender.balance) = remain
                 sender.save()
