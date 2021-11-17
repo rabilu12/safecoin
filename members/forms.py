@@ -138,12 +138,12 @@ class iduploadForm(forms.ModelForm):
         
         
         
- class orphanageForm(forms.ModelForm):
+class orphanageForm(forms.ModelForm):
     class Meta:
         model = orphanage
         field = '__All__'
         exclude = ['date', 'agent'] 
-
+        
 class circleForm(forms.ModelForm):
     class Meta:
         model = Circle
