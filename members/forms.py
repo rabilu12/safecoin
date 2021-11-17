@@ -136,25 +136,7 @@ class iduploadForm(forms.ModelForm):
         exclude = ['user']
         
         
-class orphanageForm(forms.ModelForm):
-    class Meta:
-        model = orphanage
-        field = '__All__'
-        exclude = ['date', 'agent'] 
 
-class circleForm(forms.ModelForm):
-    class Meta:
-        model = Circle
-        field = '__All__'
-        exclude = ['date', 'rootuser']
-
-
-class transactionForm(forms.ModelForm):
-    class Meta:
-        model = Transaction
-        field = '__All__'
-        exclude = ['date', 'viapps', 'username']                
-            
         
         
         
