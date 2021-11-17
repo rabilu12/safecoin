@@ -1,5 +1,5 @@
 from django import forms
-from members.models import Agent, Profile, Vpp, Paid, vpp_balance, vppsub, Agent_verified
+from members.models import Agent, Profile, Transaction, Vpp, Paid, vpp_balance, vppsub, Agent_verified, orphanage, Circle
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -134,6 +134,35 @@ class iduploadForm(forms.ModelForm):
         model = Agent_verified
         field = '__All__'
         exclude = ['user']
+        
+        
+        
+        
+ class orphanageForm(forms.ModelForm):
+    class Meta:
+        model = orphanage
+        field = '__All__'
+        exclude = ['date', 'agent'] 
+
+class circleForm(forms.ModelForm):
+    class Meta:
+        model = Circle
+        field = '__All__'
+        exclude = ['date', 'rootuser']
+
+
+class transactionForm(forms.ModelForm):
+    class Meta:
+        model = Transaction
+        field = '__All__'
+        exclude = ['date', 'viapps', 'username']                
+           
+        
+        
+        
+        
+        
+        
         
         
 
