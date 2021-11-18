@@ -424,7 +424,7 @@ def outray(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(id = 1)
+                receiver = vpp_balance.objects.get(id=1)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
@@ -471,7 +471,7 @@ def outmsa(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(id = 5)
+                receiver = vpp_balance.objects.get(id=5)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
@@ -521,7 +521,7 @@ def outvic(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(id = 4)
+                receiver = vpp_balance.objects.get(id=4)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
