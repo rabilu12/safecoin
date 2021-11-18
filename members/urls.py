@@ -47,6 +47,7 @@ urlpatterns = [
     path("agent/certification/msa", views.msa, name="msa"),
 
     path("agent/certification/busy", views.busy, name="busy"),
+    path('agent/pawcm/', views.Pawelcome.as_view(), name='Pawelcome'),
     
     path("vppsubs/", views.vppsubs, name="vppsubs"),
     path("checkupload/", views.checkidupload, name="checkidupload"),
