@@ -570,7 +570,7 @@ def outmsn(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(vpp.id = 3)
+                receiver = vpp_balance.objects.get(id=3)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
