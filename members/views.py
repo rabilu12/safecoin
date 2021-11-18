@@ -191,12 +191,28 @@ def agentprofile(request):
     user = request.user.username
     if Paid.objects.filter(username=user).exists() and Agent.objects.filter(username=user).exists() and Agent_verified.objects.filter(user_id=ver).exists():
         return redirect  ('/members/agent/profile')
+    if Paid.objects.filter(username=user).exists() and Agent.objects.filter(username=user).exists():
+        messages.warning(request, 'Your have not uploaded the required documents for verification.')
+        return redirect  ('/members/agent/pawcm')
     elif Agent.objects.filter(username=user).exists():
         messages.warning(request, 'Your agent account is not verified, make sure you verify your account before the deadline.')
         return redirect  ('/awelcome')
     else:
         messages.warning(request, 'You have not applied for an Agent.')
         return redirect  ('/members/user/profile')
+
+@method_decorator(login_required(login_url='user:log_in'), name='dispatch')
+class Pawelcome(View):
+    userprofile = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        return super(Pawelcome, self).dispatch(request, *args, **kwargs)
+
+    def get(self, request):
+        context = {'profile': self.profile, 'segment': 'profile'}
+        
+        return render(request,'members/pawelcome.html', context)
 
 @method_decorator(login_required(login_url='user:log_in'), name='dispatch')
 class AProfile(View):
