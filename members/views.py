@@ -122,7 +122,7 @@ class ProfileView(View):
             messages.success(request, 'Profile saved successfully')
         else:
             messages.error(request, form_validation_error(form))
-        return redirect('userprofile')
+        return redirect('profile')
 
 
 @(login_required(login_url='user:log_in'))
