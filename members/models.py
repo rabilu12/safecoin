@@ -21,8 +21,7 @@ class Profile(models.Model):
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
     zip = models.CharField(max_length=30, null=True, blank=True)
-    task = models.CharField(max_length=1000, null=True, blank=True)
-    balance = models.IntegerField(null=True, blank=True)
+    
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -104,6 +103,7 @@ class Agent(models.Model):
         (Category_Voluntary, _("Voluntary")),
         (Category_Paid, _("Paid")),
     ]
+    user = models.OneToOneField(User, related_name="agent", on_delete=models.CASCADE, null=False, blank=False)
     username = models.CharField(max_length=255, null=False, blank=False)
     phone = models.CharField(max_length=32, null=False, blank=False)
     country = models.CharField(max_length=255, null=False, blank=False)
@@ -112,6 +112,11 @@ class Agent(models.Model):
     category = models.PositiveSmallIntegerField(choices=Category_CHOICES, null=False, blank=False)
     qualification = models.PositiveSmallIntegerField(choices=Qualification_CHOICES, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    task = models.CharField(max_length=1000, null=True, blank=True)
+    taskaddress = models.CharField(max_length=1000, null=True, blank=True)
+    taskreward = models.IntegerField(null=True, blank=True)
+    balance = models.IntegerField(null=True, blank=True)
 
     class Meta:
         verbose_name = _('Agent')
