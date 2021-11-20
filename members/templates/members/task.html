@@ -18,9 +18,12 @@
                         <div class="row justify-content-center">
                             <h4 class="font-weight-normal">Agent's Task</h4>
                                     <h6 class="font-weight-normal">
-                                    <h5 class="h6">{{ profile.task }}</h5>
+                                    <h5 class="h6">{{ agent.task }}</h5>
                                     </h6>
-                                   <p>Released on:</p><p>{{ profile.updated_at }}</p>
+                            <p>Task location:</p><p>{{ agent.taskaddress }}</p>
+                            <p class="text-center">Balance:</p>
+                            <h3 class="font-weight-bolder text-center">$ {{ agent.taskreward }}</h3>
+                                   <p>Released on:</p><p>{{ agent.updated_at }}</p>
                                     
                             </div>
                             </div>
