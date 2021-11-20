@@ -1,5 +1,5 @@
 from django import forms
-from members.models import Agent, Profile, Transaction, Vpp, Paid, vpp_balance, vppsub, Agent_verified, orphanage
+from members.models import Agent, Profile, Transaction, Vpp, Paid, vpp_balance, vppsub, Agent_verified, orphanage, Circle
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -151,8 +151,16 @@ class transactionForm(forms.ModelForm):
     class Meta:
         model = Transaction
         field = '__All__'
-        exclude = ['date', 'viapps', 'username']                
-           
+        exclude = ['date', 'viapps', 'username'] 
+        
+class circleForm(forms.ModelForm):
+    class Meta:
+        model = Circle
+        field = '__All__'
+        exclude = ['date', 'rootuser']
+        
+        
+        
         
         
         
