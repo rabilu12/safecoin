@@ -79,7 +79,7 @@ class AgentForm(forms.ModelForm):
     class Meta:
         model = Agent
         fields = ('phone','country','state','city','category','qualification')
-        exclude = ['username']
+        exclude = ['username', 'user', 'task', 'taskaddress', 'taskreward', 'balance']
         
 
 
