@@ -183,11 +183,7 @@ class orphanage(models.Model):
         return self.avatar.url if self.avatar else ('assets/img/team/default-profile-picture.png')
 
    
-class Circle(models.Model):
-    rootuser = models.CharField(max_length=36, null=True, blank=True)
-    user = models.CharField(max_length=36, null=True, blank=True)
 
-    date = models.DateTimeField(auto_now_add=True)
         
 
 class Transaction(models.Model):
