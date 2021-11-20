@@ -144,11 +144,7 @@ class orphanageForm(forms.ModelForm):
         field = '__All__'
         exclude = ['date', 'agent'] 
         
-class circleForm(forms.ModelForm):
-    class Meta:
-        model = Circle
-        field = '__All__'
-        exclude = ['date', 'rootuser']
+
 
 
 class transactionForm(forms.ModelForm):
