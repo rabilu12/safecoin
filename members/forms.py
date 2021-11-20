@@ -1,5 +1,5 @@
 from django import forms
-from members.models import Agent, Profile, Transaction, Vpp, Paid, vpp_balance, vppsub, Agent_verified, orphanage, Circle
+from members.models import Agent, Profile, Transaction, Vpp, Paid, vpp_balance, vppsub, Agent_verified, orphanage
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
