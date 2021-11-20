@@ -139,6 +139,7 @@ def agent_register(request):
                 return redirect('/log-in')
 
             else:
+                agent.user_id = request.user.id
                 agent.username = user
                 form.save()
             
@@ -396,11 +397,11 @@ class Task(View):
     task = None
 
     def dispatch(self, request, *args, **kwargs):
-        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        self.task, __ = Agent.objects.get_or_create(user=request.user)
         return super(Task, self).dispatch(request, *args, **kwargs)
 
     def get(self, request):
-        context = {'profile': self.profile, 'segment': 'profile'}
+        context = {'task': self.task, 'segment': 'task'}
         
         return render(request,'members/task.html', context)
 
