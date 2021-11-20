@@ -197,9 +197,10 @@ class Transaction(models.Model):
         verbose_name_plural = _('transactionss')
     
     
-    
-    
+class Circle(models.Model):
+    rootuser = models.CharField(max_length=36, null=True, blank=True)
+    user = models.CharField(max_length=36, null=True, blank=True)
 
-
+    date = models.DateTimeField(auto_now_add=True)
 
         
