@@ -103,7 +103,7 @@ class Agent(models.Model):
         (Category_Voluntary, _("Voluntary")),
         (Category_Paid, _("Paid")),
     ]
-    user = models.OneToOneField(User, related_name="agent", on_delete=models.CASCADE, null=False, blank=False)
+    user = models.OneToOneField(User, related_name="agent", on_delete=models.CASCADE, null=True, blank=True)
     username = models.CharField(max_length=255, null=False, blank=False)
     phone = models.CharField(max_length=32, null=False, blank=False)
     country = models.CharField(max_length=255, null=False, blank=False)
