@@ -17,13 +17,14 @@
                     <div class="card card-body bg-white border-light shadow-sm mb-4">
                         <div class="row justify-content-center">
                             <h4 class="font-weight-normal text-center">Agent's Task</h4>
+                                    <p>Task Descriptions:</p>
                                     <h6 class="font-weight-normal">
                                     <h5 class="h6">{{ task.task }}</h5>
                                     </h6>
                             <p>Task location:</p><p>{{ task.taskaddress }}</p>
                             <p class="">Task reward:</p>
-                            <h3 class="font-weight-bolder">$ {{ agent.taskreward }}</h3>
-                                   <p>Released on:</p><p>{{ task.updated_at }}</p>
+                            <h3 class="font-weight-bolder">$ {{ task.taskreward }}</h3>
+                                   <p>Released on:</p><p>{{ task.created_at }}</p>
                                     
                             </div>
                             </div>
