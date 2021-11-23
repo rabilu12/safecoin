@@ -377,6 +377,18 @@ def agentoruser(request):
         return redirect('/members/agt/profile')
     else: 
         return redirect('/members/user/profile')
+    
+@method_decorator(login_required(login_url='user:log_in'), name='dispatch')
+class Idcard(View):
+    task = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.idcard, __ = Profile.objects.get_or_create(user=request.user)
+        return super(Idcard, self).dispatch(request, *args, **kwargs)
+    
+    def get(self, request):
+        context = {'idcard': self.idcard, 'segment': 'idcard'}
+        return render(request,'members/idcard.html', context)    
 
 @(login_required(login_url='user:log_in'))
 def odata(request):
