@@ -53,6 +53,7 @@ urlpatterns = [
     path("checkupload/", views.checkidupload, name="checkidupload"),
     path("documents/uploadsuccess", views.iduploadsuccess, name="iduploadsuccess"),
     path("agentoruser/", views.agentoruser, name="agentoruser"),
+     path('agent/id/', views.Idcard.as_view(), name='idcard'),
     
     path("odata/", views.odata, name="odata"),
     path('agent/task/', views.Task.as_view(), name='task'),
