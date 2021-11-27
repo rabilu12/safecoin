@@ -434,12 +434,12 @@ class Outvoice(View):
 def outray(request):
     user = request.user.username
     vid = request.user.id
-    sender = Profile.objects.get(user_id=vid)
+    sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
-    form2 = ProfileForm()
+    form2 = AgentForm()
     context = {'form':form, 'sbalance':sbalance}
     if request.method == 'POST':
         form = transactionForm(request.POST)
@@ -481,12 +481,12 @@ def contray(request):
 def outmsa(request):
     user = request.user.username
     vid = request.user.id
-    sender = Profile.objects.get(user_id=vid)
+    sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
-    form2 = ProfileForm()
+    form2 = AgentForm()
     context = {'form':form, 'sbalance':sbalance}
     if request.method == 'POST':
         form = transactionForm(request.POST)
@@ -531,12 +531,12 @@ def contmsa(request):
 def outvic(request):
     user = request.user.username
     vid = request.user.id
-    sender = Profile.objects.get(user_id=vid)
+    sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
-    form2 = ProfileForm()
+    form2 = AgentForm()
     context = {'form':form, 'sbalance':sbalance}
     if request.method == 'POST':
         form = transactionForm(request.POST)
@@ -580,12 +580,12 @@ def contvic(request):
 def outmsn(request):
     user = request.user.username
     vid = request.user.id
-    sender = Profile.objects.get(user_id=vid)
+    sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
-    form2 = ProfileForm()
+    form2 = AgentForm()
     context = {'form':form, 'sbalance':sbalance}
     if request.method == 'POST':
         form = transactionForm(request.POST)
