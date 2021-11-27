@@ -220,11 +220,11 @@ class AProfile(View):
     userprofile = None
 
     def dispatch(self, request, *args, **kwargs):
-        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        self.aprofile, __ = Agent.objects.get_or_create(user=request.user)
         return super(AProfile, self).dispatch(request, *args, **kwargs)
 
     def get(self, request):
-        context = {'profile': self.profile, 'segment': 'profile'}
+        context = {'aprofile': self.aprofile, 'segment': 'aprofile'}
         
         return render(request,'members/agentprofile.html', context)
     
