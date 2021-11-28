@@ -1,3 +1,4 @@
+AWS_SECRET_ACCESS_KEY = '+5ZiIzljCjHhdFWsSmIxqCGRYvzX6lSZEw/OHajCkCs'
 import os
 from pathlib import Path
 import sys
@@ -153,7 +154,7 @@ USE_TZ = True
 
 AWS_ACCESS_KEY_ID = 'DDTJNYH5HCVX3QZBKY5M'
 
-AWS_SECRET_ACCESS_KEY = '+5ZiIzljCjHhdFWsSmIxqCGRYvzX6lSZEw/OHajCkCs'
+
 
 AWS_STORAGE_BUCKET_NAME = 'charitylandspace'
 
