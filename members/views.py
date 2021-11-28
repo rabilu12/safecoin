@@ -453,7 +453,7 @@ def outray(request):
             if remain < 0:
                 messages.error(request, 'Insufficient balance.')
             else:
-                receiver = vpp_balance.objects.get(id=1)
+                receiver = vpp_balance.objects.get(id=2)
                 addbalance = int(receiver.unit) + int(amount)
                 (receiver.unit) = addbalance
                 
