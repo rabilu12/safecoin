@@ -158,8 +158,7 @@ AWS_ACCESS_KEY_ID = 'DDTJNYH5HCVX3QZBKY5M'
 
 AWS_STORAGE_BUCKET_NAME = 'charitylandspace'
 
-AWS_S3_ENDPOINT_URL = 'https://charityland.fra1.digitaloceanspaces.com '
-
+AWS_S3_ENDPOINT_URL = 'https://fra1.digitaloceanspaces.com '
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
