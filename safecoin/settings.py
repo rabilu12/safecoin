@@ -158,7 +158,8 @@ AWS_ACCESS_KEY_ID = 'DDTJNYH5HCVX3QZBKY5M'
 
 AWS_STORAGE_BUCKET_NAME = 'charitylandspace'
 
-AWS_S3_ENDPOINT_URL = 'https://fra1.digitaloceanspaces.com '
+AWS_S3_ENDPOINT_URL = 'https://charityland.fra1.digitaloceanspaces.com '
+
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
@@ -167,9 +168,9 @@ AWS_DEFAULT_ACL = 'public-read'
 
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-STATIC_URL = '(AWS_S3_ENDPOINT_URL, 'static')'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'static')
 
-MEDIA_URL =  '(AWS_S3_ENDPOINT_URL, 'media')'
+MEDIA_URL =  'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'media')
 
 STATICFILES_STORAGE =  'custom_storages.StaticStorage'
 
@@ -192,3 +193,15 @@ STATICFILES_FINDERS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
