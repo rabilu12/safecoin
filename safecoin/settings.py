@@ -168,9 +168,9 @@ AWS_DEFAULT_ACL = 'public-read'
 
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'staticfiles')
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'static')
 
-MEDIA_URL =  'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'mediafiles')
+MEDIA_URL =  'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'media')
 
 STATICFILES_STORAGE =  'custom_storages.StaticStorage'
 
