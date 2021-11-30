@@ -1,4 +1,3 @@
-AWS_SECRET_ACCESS_KEY = '+5ZiIzljCjHhdFWsSmIxqCGRYvzX6lSZEw/OHajCkCs'
 import os
 from pathlib import Path
 import sys
@@ -39,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
     'widget_tweaks',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -152,29 +150,12 @@ USE_TZ = True
 #Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-AWS_ACCESS_KEY_ID = 'DDTJNYH5HCVX3QZBKY5M'
-
-
-
-AWS_STORAGE_BUCKET_NAME = 'charitylandspace'
-
-AWS_S3_ENDPOINT_URL = 'https://charityland.fra1.digitaloceanspaces.com '
-
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-AWS_DEFAULT_ACL = 'public-read'
-
-AWS_S3_SIGNATURE_VERSION = 's3v4'
-
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'static')
-
-MEDIA_URL =  'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'media')
-
-STATICFILES_STORAGE =  'custom_storages.StaticStorage'
-
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # MEDIA INFORMATION:
 #MEDIA_ROOT = MEDIA_DIR
