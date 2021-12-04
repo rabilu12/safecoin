@@ -1,3 +1,4 @@
+from .cdn.conf import * # noqa
 import os
 from pathlib import Path
 import sys
@@ -157,9 +158,10 @@ STATICFILES_DIRS = (
 )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
+STATIC_ROOT = STATIC_ROOT = BASE_DIR / "staticfiles-cdn" # dev example
 # MEDIA INFORMATION:
 #MEDIA_ROOT = MEDIA_DIR
+
 
 
 #LOGIN_URL = '/basic_app/user_login/'
