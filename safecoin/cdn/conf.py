@@ -9,7 +9,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 AWS_DEFAULT_ACL = "public-read"
 
 AWS_LOCATION = "https://charityland.fra1.digitaloceanspaces.com"
-STATICFILES_STORAGE = "StaticRootS3Boto3Storage"
+STATICFILES_STORAGE = "safecoin.cdn.backends.StaticRootS3Boto3Storage"
 DEFAULT_FILE_STORAGE = "safecoin.cdn.backends.MediaRootS3Boto3Storage"
 
 STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, 'static')  
