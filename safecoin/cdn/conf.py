@@ -13,7 +13,7 @@ STATICFILES_STORAGE = "StaticRootS3Boto3Storage"
 DEFAULT_FILE_STORAGE = "safecoin.cdn.backends.MediaRootS3Boto3Storage"
 
 STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, 'static')  
-STATIC_ROOT = STATIC_ROOT = BASE_DIR / "staticfiles-cdn" # dev example
+STATIC_ROOT = 'static/'
 
 MEDIA_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, 'media') 
 MEDIA_ROOT = 'media/'
