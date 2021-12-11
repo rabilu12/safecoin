@@ -1715,6 +1715,31 @@ margin: 0;
 box-sizing: border-box;
 font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.an_container{
+     padding-bottom:1rem;
+     background-color: grey;
+}
+.an{
+     width: 80%;
+     height: auto;
+     background-color: rgb(202, 230, 202);
+     color: rgb(167, 128, 128);
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin: auto;
+}
+
+.an_container p{
+
+     color: black;
+     margin-left: 1rem;
+     justify-content: center;
+}
+
+
 .footer_container1{
      padding-bottom:4rem;
      background-color: rgb(88, 148, 88);
@@ -2185,27 +2210,5 @@ form{
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-}
-
-.an_container{
-     padding-bottom:1rem;
-     background-color: grey;
-}
-.an{
-     width: 80%;
-     height: auto;
-     background-color: rgb(202, 230, 202);
-     color: rgb(167, 128, 128);
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     margin: auto;
-}
-
-.an_container p{
-
-     color: black;
-     margin-left: 1rem;
-     justify-content: center;
 }
 
