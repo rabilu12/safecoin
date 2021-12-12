@@ -21,8 +21,7 @@ class Profile(models.Model):
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
     zip = models.CharField(max_length=30, null=True, blank=True)
-    Acc_number = models.CharField(max_length=30, null=True, blank=True)
-    bank = models.CharField(max_length=30, null=True, blank=True)
+    
     
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -192,8 +191,7 @@ class Transaction(models.Model):
     username = models.CharField(max_length=36, null=True, blank=True)
     amount = models.PositiveIntegerField(null=True, blank=True)
     viapps = models.CharField( max_length=32, null=True, blank=True)
-    Acc_number = models.CharField(max_length=30, null=True, blank=True)
-    bank = models.CharField(max_length=30, null=True, blank=True)
+    
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
