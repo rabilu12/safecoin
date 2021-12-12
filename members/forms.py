@@ -64,7 +64,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = '__all__'
-        exclude = ['user', 'status']
+        exclude = ['user']
 
 
 def form_validation_error(form):
