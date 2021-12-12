@@ -21,7 +21,6 @@ class Profile(models.Model):
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
     zip = models.CharField(max_length=30, null=True, blank=True)
-    status = models.CharField(max_length=30, null=True, blank=True)
     Acc_number = models.CharField(max_length=30, null=True, blank=True)
     bank = models.CharField(max_length=30, null=True, blank=True)
     
