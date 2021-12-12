@@ -436,6 +436,9 @@ def outray(request):
     vid = request.user.id
     sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
+    payd = Profile.objects.get(user_id=vid)
+    acc = (payd.acc_number)
+    bank = (payd.bank)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
@@ -461,6 +464,8 @@ def outray(request):
 
                 withdraw.username = user
                 withdraw.viapps = 'Raymas'
+                withdraw.acc_number = acc
+                withdraw.bank = bank
                 withdraw.save()
                 
             
@@ -483,6 +488,9 @@ def outmsa(request):
     vid = request.user.id
     sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
+    payd = Profile.objects.get(user_id=vid)
+    acc = (payd.acc_number)
+    bank = (payd.bank)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
@@ -508,6 +516,8 @@ def outmsa(request):
 
                 withdraw.username = user
                 withdraw.viapps = 'M.Musa'
+                withdraw.acc_number = acc
+                withdraw.bank = bank
                 withdraw.save()
                 
             
@@ -533,6 +543,9 @@ def outvic(request):
     vid = request.user.id
     sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
+    payd = Profile.objects.get(user_id=vid)
+    acc = (payd.acc_number)
+    bank = (payd.bank)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
@@ -558,6 +571,8 @@ def outvic(request):
 
                 withdraw.username = user
                 withdraw.viapps = 'Victory'
+                withdraw.acc_number = acc
+                withdraw.bank = bank
                 withdraw.save()
                 
             
@@ -582,6 +597,9 @@ def outmsn(request):
     vid = request.user.id
     sender = Agent.objects.get(user_id=vid)
     sbalance = int(sender.balance)
+    payd = Profile.objects.get(user_id=vid)
+    acc = (payd.acc_number)
+    bank = (payd.bank)
     
     form = transactionForm()
     form1 = vpp_balanceForm()
@@ -607,6 +625,8 @@ def outmsn(request):
 
                 withdraw.username = user
                 withdraw.viapps = 'Muhsin'
+                withdraw.acc_number = acc
+                withdraw.bank = bank
                 withdraw.save()
                 
             
