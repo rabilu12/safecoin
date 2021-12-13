@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.decorators import login_required
+from members.models import Agent
 
 
 
@@ -345,7 +346,10 @@ class LogOutView(LoginRequiredMixin, BaseLogoutView):
 
 
 def index(request):
-    return render (request, 'user/index.html')
+    agent = Agent.objects.count()
+    ann = 95000 - int(agent)
+    context = {'ann':ann}
+    return render (request, 'user/index.html', context)
 def test(request):
     form = CreateUserForm()
     context = {'form':form}
