@@ -439,7 +439,10 @@ def verify(request):
             return redirect('/login')
 
 def awelcome(request):
-    return render(request,'user/agentwelcome.html')
+    code = request.user.id
+    context = {
+        'code': code,}
+    return render(request,'user/agentwelcome.html', context)
 
 def takeme(request):
     return redirect('/members/agentoruser')
